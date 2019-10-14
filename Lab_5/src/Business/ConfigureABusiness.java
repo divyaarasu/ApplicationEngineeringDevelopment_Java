@@ -6,6 +6,8 @@ package Business;
 
 import Business.Employee.Employee;
 import Business.Organization.AdminOrganization;
+import Business.Organization.DoctorOrganization;
+import Business.Organization.LabAOrganization;
 import Business.UserAccount.UserAccount;
 /**
  *
@@ -21,7 +23,7 @@ public class ConfigureABusiness {
        business.getOrganizationDirectory().getOrganizationList().add(adminOrganization);
         
         Employee employee = new Employee();
-        employee.setName("Div");
+        employee.setName("Divya");
         
         
         UserAccount account = new UserAccount();
@@ -34,7 +36,31 @@ public class ConfigureABusiness {
         adminOrganization.getEmployeeDirectory().getEmployeeList().add(employee);
         adminOrganization.getUserAccountDirectory().getUserAccountList().add(account);
         
+        //DOCTOR
+        DoctorOrganization docOrg = new DoctorOrganization();
+        business.getOrganizationDirectory().getOrganizationList().add(docOrg);
+        Employee emp2 = new Employee();
+        emp2.setName("Jack");        
+        UserAccount account2 = new UserAccount();
+        account2.setUsername("doctor");
+        account2.setPassword("doctor");
+        account2.setRole("Doctor");
+        account2.setEmployee(emp2);
+        docOrg.getEmployeeDirectory().getEmployeeList().add(emp2);
+        docOrg.getUserAccountDirectory().getUserAccountList().add(account2);
         
+        //Lab assistant
+        LabAOrganization labOrg = new LabAOrganization();
+        business.getOrganizationDirectory().getOrganizationList().add(labOrg);
+        Employee emp3 = new Employee();
+        emp3.setName("Rose");        
+        UserAccount account3 = new UserAccount();
+        account3.setUsername("lab");
+        account3.setPassword("lab");
+        account3.setRole("LabAssistant");
+        account3.setEmployee(emp3);
+        labOrg.getEmployeeDirectory().getEmployeeList().add(emp3);
+        labOrg.getUserAccountDirectory().getUserAccountList().add(account3);
         
         return business;
     }

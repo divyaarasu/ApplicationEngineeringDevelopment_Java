@@ -140,16 +140,17 @@ public class MainJFrame extends javax.swing.JFrame {
                 container.add("sucessScreen", sc);
                 layout.next(container);
                 flag = true;
+                loginJButton.setEnabled(false);
+                logoutJButton.setEnabled(true);
+                userNameJTextField.setEnabled(false);
+                passwordField.setEnabled(false);
                 break;
-            } 
+            }
         }
         if (flag == false) {
-            
+          JOptionPane.showMessageDialog(null,"Invalid username or password");
+                return;  
         } 
-        loginJButton.setEnabled(false);
-        logoutJButton.setEnabled(true);
-        userNameJTextField.setEnabled(false);
-        passwordField.setEnabled(false);
     }//GEN-LAST:event_loginJButtonActionPerformed
 
     private void logoutJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutJButtonActionPerformed

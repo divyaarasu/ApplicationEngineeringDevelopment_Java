@@ -11,10 +11,10 @@ import java.util.ArrayList;
  *
  * @author DivyaThanigaiArasu
  */
-public class AdminOrganization extends Organization {
+public class DoctorOrganization extends Organization {
 
-    public AdminOrganization() {
-        super(Type.Admin.getValue());
+    public DoctorOrganization() {
+        super(Type.Doctor.getValue());
     }
 
    
@@ -22,7 +22,7 @@ public class AdminOrganization extends Organization {
     @Override
     public ArrayList<String> getSupportedRole() {
         ArrayList<String> roles = new ArrayList<>();
-        roles.add("Admin");
+        roles.add("Doctor");
         return roles;
     }
     
